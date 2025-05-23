@@ -7,7 +7,7 @@ import (
 	"os"
 	"strconv"
 
-	pb "github.com/rabbytesoftware/quiver.sdk/package"
+	pb "github.com/rabbytesoftware/quiver.compiler/shared/package"
 	"google.golang.org/grpc"
 )
 

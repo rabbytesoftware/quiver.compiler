@@ -3,7 +3,7 @@ package packagebase
 import (
 	"context"
 
-	pb "github.com/rabbytesoftware/quiver.sdk/package"
+	pb "github.com/rabbytesoftware/quiver.compiler/shared/package"
 )
 
 // gRPC Service Implementation

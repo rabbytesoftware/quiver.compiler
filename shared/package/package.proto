@@ -1,0 +1,39 @@
+syntax = "proto3";
+package package;
+
+option go_package = "rounds.com.ar/sdk/shared/package";
+/*
+To generate the go code from this proto file, run the following command:
+
+protoc \
+	--go_out=./shared/package \
+	--go-grpc_out=./shared/package \
+	./shared/package/package.proto
+*/
+
+// PackageService defines the interface for all packages
+service PackageService {
+	rpc SetPorts 	(SetPortsRequest) 	returns (BoolResponse);
+	
+	rpc Install (Empty) 	returns (BoolResponse);
+	rpc Run 	(Empty) 	returns (BoolResponse);
+	rpc Exit 	(Empty) 	returns (Empty);
+}
+
+message Empty {}
+
+message StringResponse {
+	string value = 1;
+}
+
+message BoolResponse {
+	bool success = 1;
+}
+
+message IntResponse {
+	int32 value = 1;
+}
+
+message SetPortsRequest {
+	repeated int32 ports = 1;
+}

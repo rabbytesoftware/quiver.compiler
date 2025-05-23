@@ -13,13 +13,13 @@ import (
 func main() {
 	// Parse command line flags
 	inputDir := flag.String("input", "", "Directory containing the Go project to compile")
-	outputDir := flag.String("output", "", "Directory where the output .watcher file will be placed")
+	outputDir := flag.String("output", "", "Directory where the output .quiver file will be placed")
 	fastMode := flag.Bool("fast", false, "Only compile for the current platform (faster)")
 	
 	flag.Parse()
 
 	// Show build timestamp
-	fmt.Printf("Watcher Package Compiler - %s - %s\n", *inputDir, time.Now().Format("2006-01-02 15:04:05"))
+	fmt.Printf("Quiver Compiler - %s - %s\n", *inputDir, time.Now().Format("2006-01-02 15:04:05"))
 	
 	// Validate flags
 	if *inputDir == "" || *outputDir == "" {
@@ -45,7 +45,7 @@ func main() {
 	
 	// Get the base folder name for the .watcher file
 	folderName := filepath.Base(*inputDir)
-	outputFile := filepath.Join(*outputDir, folderName+".watcher")
+	outputFile := filepath.Join(*outputDir, folderName+".quiver")
 	
 	// Create compiler and do the work
 	compiler := compiler.NewCompiler(*inputDir, outputFile, *fastMode)
